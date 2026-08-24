@@ -113,7 +113,8 @@ export default function RankPage() {
         // const { data, error } = await supabase.from('posts').select('*');
         const { data, error } = await supabase
           .from('post_new')
-          .select('id, image_url, caption, likes')
+          //.select('id, image_url, caption, likes')
+          .select('*')
           .gt('likes', 5)
           .order('likes', { ascending: false })
           .limit(10);
